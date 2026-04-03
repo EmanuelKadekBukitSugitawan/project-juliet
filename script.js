@@ -15,8 +15,11 @@ const giftBox = document.getElementById('gift');
 const titleText = document.querySelector('.title');
 
 // 3. Logika ketika kado diklik pertama kali
-giftBox.addEventListener('click', () => {
+giftBox.addEventListener('click', (event) => {
     if (!kadoTerbuka) {
+        // Mencegah efek klik bocor ke window (seluruh layar)
+        event.stopPropagation(); 
+        
         kadoTerbuka = true;
         
         // Sembunyikan kado dan petunjuk
@@ -43,7 +46,7 @@ window.addEventListener('click', (event) => {
     }
 });
 
-// 5. Fungsi untuk menjalankan efek otomatis sesuai video
+// 5. Fungsi untuk menjalankan efek otomatis
 function jalankanEfekOtomatis() {
     let index = 0;
 
@@ -69,5 +72,5 @@ function jalankanEfekOtomatis() {
             // Teks penutup
             titleText.innerText = "Happy Birthday Sayangku! 💜";
         }
-    }, 2000); // Teks berganti setiap 2 detik (2000 milidetik)
+    }, 2000); // Teks berganti setiap 2 detik
 }
