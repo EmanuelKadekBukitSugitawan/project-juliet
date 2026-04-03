@@ -1,0 +1,49 @@
+/* Menghilangkan margin bawaan dan membuat halaman setinggi layar */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0b0b; /* Warna hitam pekat */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Mencegah scrollbar muncul */
+}
+
+/* Wadah utama agar semua elemen tersusun rapi ke bawah */
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Efek teks menyala untuk judul */
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 105, 180, 0.5); /* Sentuhan glow merah muda */
+}
+
+/* Menghias emoji kado agar besar dan bisa diklik */
+.gift-box {
+    font-size: 5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Efek sedikit membesar saat kado disentuh/di-hover */
+.gift-box:hover {
+    transform: scale(1.1);
+}
+
+/* Gaya untuk teks petunjuk di bawah kado */
+.instruction {
+    font-size: 1rem;
+    color: #aaaaaa;
+    font-style: italic;
+}
